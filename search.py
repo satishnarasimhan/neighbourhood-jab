@@ -118,7 +118,7 @@ print(pin_code)
 
 day = datetime.now()
 today = day.strftime("%d-%m-%Y")
-day = today#"16-06-2021"
+day = today #"16-06-2021"
 
 dfObj = pd.DataFrame(columns=['Pincode','Facility','Date','Slots','Min. Age', "Vaccine"])
 
@@ -131,8 +131,7 @@ for pin in pin_code:
 
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36'}
 
-    # Session object allows one to persist certain parameters across requests. It also persists cookies across all requests made from the 
-    # Session instance and will use urllib3’s connection pooling. So if several requests are being made to the same host, the underlying TCP # connection will be reused, which can result in a significant performance increase
+    # If you need continuous polling, uncomment the with clause below
 # with requests.session() as session:
     session = requests.session()
     response = session.get(url, headers=headers)
